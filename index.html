@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Refresh Café Menu</title>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@500&family=Poppins:wght@300;500&display=swap"
+                rel="stylesheet" />
+
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: 'Poppins', sans-serif;
+                        background: url('background.jpg') no-repeat center center fixed;
+                        background-size: cover;
+                        color: #fff;
+                        padding: 20px;
+                        min-height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                }
+
+                .logo {
+                        width: 90px;
+                        border-radius: 50%;
+                        margin-bottom: 20px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                }
+
+                h1 {
+                        font-family: 'Playfair Display', serif;
+                        font-size: 2.2rem;
+                        text-align: center;
+                        color: #2e8b57;
+                        /* dark green */
+                        text-shadow: 1px 1px 2px #000;
+                        margin-bottom: 20px;
+                }
+
+                .tabs {
+                        display: flex;
+                        gap: 12px;
+                        margin-bottom: 20px;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                }
+
+                .tab-button {
+                        font-family: 'Montserrat', sans-serif;
+                        background-color: #1b1b1b;
+                        color: #2ecc71;
+                        border: 1px solid #2ecc71;
+                        padding: 10px 18px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-size: 15px;
+                        transition: all 0.3s ease;
+                }
+
+                .tab-button.active,
+                .tab-button:hover {
+                        background-color: #2ecc71;
+                        color: #111;
+                }
+
+                .tab-content {
+                        display: none;
+                        width: 100%;
+                        max-width: 720px;
+                }
+
+                .tab-content.active {
+                        display: block;
+                }
+
+                .table-container {
+                        width: 100%;
+                        overflow-x: auto;
+                }
+
+                table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        background: rgba(0, 0, 0, 0.85);
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                }
+
+                th,
+                td {
+                        padding: 14px 10px;
+                        text-align: center;
+                        white-space: nowrap;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                th {
+                        background-color: #111;
+                        color: #2ecc71;
+                        text-transform: uppercase;
+                        font-size: 13px;
+                        letter-spacing: 1px;
+                }
+
+                td {
+                        font-size: 14px;
+                }
+
+                footer {
+                        margin-top: 40px;
+                        font-size: 18px;
+                        color: #ccc;
+                        text-align: center;
+                        text-shadow: 1px 1px 2px #000;
+                }
+
+                @media (max-width: 600px) {
+                        h1 {
+                                font-size: 1.6rem;
+                        }
+
+                        .tab-button {
+                                font-size: 13px;
+                                padding: 8px 14px;
+                        }
+
+                        th,
+                        td {
+                                font-size: 12.5px;
+                                padding: 10px 6px;
+                        }
+
+                        footer {
+                                font-size: 16px;
+                        }
+                }
+        </style>
+</head>
+
+<body>
+
+        <img src="logo.jpg" alt="Refresh Café Logo" class="logo" />
+        <h1>Refresh Café Menu</h1>
+
+        <!-- Tabs -->
+        <div class="tabs">
+                <button class="tab-button active" onclick="showTab('roti')">Roti</button>
+                <button class="tab-button" onclick="showTab('rice')">Rice</button>
+                <button class="tab-button" onclick="showTab('drinks')">Drinks</button>
+        </div>
+
+        <!-- Roti Tab -->
+        <div id="roti" class="tab-content active">
+                <div class="table-container">
+                        <table>
+                                <tr>
+                                        <th>Item</th>
+                                        <th>Price (1)</th>
+                                        <th>Price (4)</th>
+                                        <th>Price (7)</th>
+                                </tr>
+                                <tr>
+                                        <td>Plain Naan</td>
+                                        <td>₹35</td>
+                                        <td>₹90</td>
+                                        <td>₹150</td>
+                                </tr>
+                                <tr>
+                                        <td>Butter Naan</td>
+                                        <td>₹55</td>
+                                        <td>₹150</td>
+                                        <td>₹250</td>
+                                </tr>
+                                <tr>
+                                        <td>Butter Garlic Naan</td>
+                                        <td>₹65</td>
+                                        <td>₹180</td>
+                                        <td>₹280</td>
+                                </tr>
+                                <tr>
+                                        <td>Tandoori Roti</td>
+                                        <td>₹25</td>
+                                        <td>₹75</td>
+                                        <td>₹130</td>
+                                </tr>
+                                <tr>
+                                        <td>Butter Tandoori Roti</td>
+                                        <td>₹35</td>
+                                        <td>₹90</td>
+                                        <td>₹150</td>
+                                </tr>
+                        </table>
+                </div>
+        </div>
+
+        <!-- Rice Tab -->
+        <div id="rice" class="tab-content">
+                <div class="table-container">
+                        <table>
+                                <tr>
+                                        <th>Item</th>
+                                        <th>Price</th>
+                                </tr>
+                                <tr>
+                                        <td>Veg Fried Rice</td>
+                                        <td>₹120</td>
+                                </tr>
+                                <tr>
+                                        <td>Jeera Rice</td>
+                                        <td>₹90</td>
+                                </tr>
+                                <tr>
+                                        <td>Paneer Pulao</td>
+                                        <td>₹150</td>
+                                </tr>
+                        </table>
+                </div>
+        </div>
+
+        <!-- Drinks Tab -->
+        <div id="drinks" class="tab-content">
+                <div class="table-container">
+                        <table>
+                                <tr>
+                                        <th>Drink</th>
+                                        <th>Price</th>
+                                </tr>
+                                <tr>
+                                        <td>Lassi</td>
+                                        <td>₹50</td>
+                                </tr>
+                                <tr>
+                                        <td>Cold Coffee</td>
+                                        <td>₹70</td>
+                                </tr>
+                                <tr>
+                                        <td>Lemon Soda</td>
+                                        <td>₹30</td>
+                                </tr>
+                        </table>
+                </div>
+        </div>
+
+        <footer>Thank you for visiting Refresh Café!</footer>
+
+        <script>
+                function showTab(id) {
+                        const tabs = document.querySelectorAll(".tab-content");
+                        const buttons = document.querySelectorAll(".tab-button");
+
+                        tabs.forEach(tab => tab.classList.remove("active"));
+                        buttons.forEach(btn => btn.classList.remove("active"));
+
+                        document.getElementById(id).classList.add("active");
+                        event.target.classList.add("active");
+                }
+        </script>
+
+</body>
+
+</html>
