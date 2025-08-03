@@ -2,7 +2,7 @@ import qrcode
 from PIL import Image
 
 # Step 1: QR code data and setup
-menu_url = "https://yourusername.github.io/refresh-cafe-menu/"
+menu_url = "https://palash-developer.github.io/refresh-cafe/"
 qr = qrcode.QRCode(
     version=4,
     error_correction=qrcode.constants.ERROR_CORRECT_H,
